@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">CalorieCounter</string>
     <string name="action_settings">Settings</string>
+
+    <string name="ingredient_name_hint">Name of ingredient.</string>
+    <string name="ingredient_name_label">Name:</string>
 </resources>

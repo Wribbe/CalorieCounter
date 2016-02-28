@@ -11,6 +11,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    protected final int ADD_INGREDIENT = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +30,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addIngredient(View view) {
+        System.out.println("addIngredient start.");
         Intent intent = new Intent(this, AddIngredientActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, ADD_INGREDIENT);
+        System.out.println("addIngredient stop.");
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        System.out.println("Does this fire?");
+        System.out.println(data.getStringExtra("message"));
     }
 
     @Override

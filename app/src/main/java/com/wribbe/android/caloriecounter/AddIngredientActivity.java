@@ -1,7 +1,10 @@
 package com.wribbe.android.caloriecounter;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class AddIngredientActivity extends AppCompatActivity {
 
@@ -9,5 +12,27 @@ public class AddIngredientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ingredient);
+        returnOutput();
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        String ingredientName = ((EditText) findViewById(R.id.ingredient_name)).getText().toString();
+        if (ingredientName.equals("")) {
+            System.out.println("No ingredient name.");
+        } else {
+            System.out.println(ingredientName);
+        }
+        finish();
+    }
+
+    protected void returnOutput() {
+        System.out.println("Start of return Output.");
+        Intent output = new Intent();
+        output.putExtra("message", "Hello caller.");
+        setResult(Activity.RESULT_OK, output);
+        System.out.println("End of return Output.");
+//        finish();
     }
 }
