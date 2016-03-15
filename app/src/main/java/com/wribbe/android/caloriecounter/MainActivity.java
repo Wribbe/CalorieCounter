@@ -1,13 +1,19 @@
 package com.wribbe.android.caloriecounter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 addIngredient(view);
+                helloWorldFile();
             }
         });
     }
@@ -34,6 +41,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddIngredientActivity.class);
         startActivityForResult(intent, ADD_INGREDIENT);
         System.out.println("addIngredient stop.");
+    }
+
+    public void helloWorldFile() {
+        String filename = "myfile";
+        String string = "Hello world!";
+        FileOutputStream outputStream;
+
+        try {
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(string.getBytes());
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
