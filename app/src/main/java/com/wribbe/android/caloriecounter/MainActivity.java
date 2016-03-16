@@ -26,6 +26,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import com.wribbe.android.caloriecounter.Utils;
+
 public class MainActivity extends AppCompatActivity {
 
     protected final int ADD_INGREDIENT = 1;
@@ -131,6 +133,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        String message_string = data.getStringExtra("message");
+        String format_string = "request code: %d, resultCode: %d, data: %s";
+
+        String toast = String.format(format_string, requestCode, resultCode, message_string);
+
+        Utils.toast(this, toast);
     }
 
     @Override
