@@ -1,15 +1,14 @@
 <resources>
-    <string name="app_name">CalorieCounter</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="ingredient_name_hint">Name of ingredient.</string>
-    <string name="ingredient_name_label">Name:</string>
+    <!-- Global -->
+    <string name="app_name">CalorieCounter</string>
+    <string name="error_title">Error:</string>
+    <string name="ok_button_text">Ok</string>
 
     <!-- Add ingredient view -->
     <string name="ingredient_cancel_button">Cancel</string>
     <string name="ingredient_save_button">Save</string>
+    <string name="ingredient_name_hint">Name of ingredient.</string>
+    <string name="ingredient_name_label">Name:</string>
 
-    <string name="error_title">Error:</string>
-
-    <string name="ok_button_text">Ok</string>
 </resources>
