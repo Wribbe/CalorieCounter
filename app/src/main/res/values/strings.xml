@@ -5,5 +5,11 @@
     <string name="ingredient_name_hint">Name of ingredient.</string>
     <string name="ingredient_name_label">Name:</string>
 
+    <!-- Add ingredient view -->
+    <string name="ingredient_cancel_button">Cancel</string>
+    <string name="ingredient_save_button">Save</string>
+
     <string name="error_title">Error:</string>
+
+    <string name="ok_button_text">Ok</string>
 </resources>
