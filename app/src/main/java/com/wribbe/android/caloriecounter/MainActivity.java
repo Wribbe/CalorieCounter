@@ -110,8 +110,6 @@ public class MainActivity extends AppCompatActivity {
         return ret;
     }
 
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
