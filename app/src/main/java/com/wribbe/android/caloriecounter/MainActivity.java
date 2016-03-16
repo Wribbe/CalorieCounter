@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,18 +50,16 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, ADD_INGREDIENT);
 
         String filename = "test.txt";
-        //String data = "This is some test data..";
-        //String data = "This is some test data..\nWhit a second line?\n";
         String data = "This is data from second run.";
 
         writeFile(filename, data);
+        String format = "Result from reading file %s: %s";
+
         String resultFromFile = readFile(filename);
+        String result = String.format(format, filename, resultFromFile);
 
-        String format = "Data written to file %s: %s";
-        System.out.println(String.format(format, filename, data));
-
-        format = "Result from reading file %s: %s";
-        System.out.println(String.format(format, filename, resultFromFile));
+        Toast toast = Toast.makeText(this, result, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     public void writeFile(String filename, String data) {
@@ -112,9 +111,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //super.onActivityResult(requestCode, resultCode, data);
-        System.out.println("Does this fire?");
-        System.out.println(data.getStringExtra("message"));
     }
 
     @Override
