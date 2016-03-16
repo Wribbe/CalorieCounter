@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     tools:context=".AddIngredientActivity">
-    >
 
     <!-- Name: <Field> -->
     <LinearLayout
@@ -46,7 +45,6 @@
             android:layout_weight="1"
             android:text="@string/ingredient_save_button"
             />
-
 
     </LinearLayout>
 
