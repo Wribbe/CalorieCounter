@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
         builder.setTitle(R.string.error_title);
         builder.setMessage(error_message);
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
 
         builder.setPositiveButton("OK", null);
         builder.create().show();
