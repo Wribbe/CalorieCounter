@@ -1,74 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".AddIngredientActivity">
     >
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Remainder"
-        />
-    <Spinner
-        android:id="@+id/dates"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/name"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/times"
-        />
-    <Spinner
-        android:id="@id/times"
-        android:layout_width="96dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/name"
-        android:layout_alignParentRight="true"
-        />
-    <Button
-        android:layout_width="96dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/times"
-        android:layout_alignParentRight="true"
-        android:text="Done"
-        />
-    </RelativeLayout>
-<!--
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddIngredientActivity">
-
-    <TextView
-        android:id="@+id/ingredient_name_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ingredient_name_label"
-        />
-
-    <EditText
-        android:id="@+id/ingredient_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/ingredient_name_hint"
-        />
-
+    <!-- Name: <Field> -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="bottom"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredient_name_label"
+            />
+        <EditText
+            android:id="@+id/ingredient_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ingredient_name_hint"
+            />
+    </LinearLayout>
+
+    <!-- Cancel/Save button layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         >
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@String/ingredient_cancel_button"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@String/ingredient_save_button"
+            />
+
+
     </LinearLayout>
 
 </LinearLayout>
--->
