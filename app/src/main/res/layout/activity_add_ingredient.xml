@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".AddIngredientActivity">
 
-    <!-- Name: <Field> -->
+    <!-- name: <Field> -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
