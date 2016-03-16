@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
             outputStream.close();
 
         } catch (IOException e) {
-            Log.e("Exception", "File write failed: " + e.toString());
+            String error = String.format("Could not write to file: %s", filename);
+            errorDialog(error);
         }
     }
 
