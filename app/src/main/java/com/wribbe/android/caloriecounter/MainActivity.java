@@ -26,8 +26,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-import com.wribbe.android.caloriecounter.Utils;
-
 public class MainActivity extends AppCompatActivity {
 
     protected final int ADD_INGREDIENT = 1;
