@@ -52,22 +52,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddIngredientActivity.class);
         startActivityForResult(intent, ADD_INGREDIENT);
 
-        String filename = "test.txt";
-        String data = "This is data from second run.";
-
-        writeFile(filename, data);
-        String format = "Result from reading file %s: %s";
-
-        String resultFromFile = readFile(filename);
-        String result = String.format(format, filename, resultFromFile);
-
-        readFile("faultyFilename.txt");
-
-        toast(result);
-    }
-
-    public void toast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+//        String filename = "test.txt";
+//        String data = "This is data from second run.";
+//
+//        writeFile(filename, data);
+//        String format = "Result from reading file %s: %s";
+//
+//        String resultFromFile = readFile(filename);
+//        String result = String.format(format, filename, resultFromFile);
+//        readFile("faultyFilename.txt");
+//
+//        toast(result);
     }
 
     public void writeFile(String filename, String data) {
