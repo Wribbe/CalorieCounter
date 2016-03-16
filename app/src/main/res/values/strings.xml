@@ -3,6 +3,7 @@
     <!-- Global -->
     <string name="app_name">CalorieCounter</string>
     <string name="error_title">Error:</string>
+    <string name="action_settings">Settings</string>
     <string name="ok_button_text">Ok</string>
 
     <!-- Add ingredient view -->
