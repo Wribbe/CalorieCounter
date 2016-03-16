@@ -1,5 +1,6 @@
 package com.wribbe.android.caloriecounter;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         String resultFromFile = readFile(filename);
         String result = String.format(format, filename, resultFromFile);
 
+        readFile("faultyFilename.txt");
+
         toast(result);
     }
 
@@ -78,8 +81,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String readFile(String filename) {
-        //String ret = "";
+
         String ret = "";
+
         try {
 
             InputStream inputStream = openFileInput(filename);
@@ -102,12 +106,26 @@ public class MainActivity extends AppCompatActivity {
                 ret = stringBuilder.toString().trim();
             }
         } catch (FileNotFoundException e) {
-            Log.e("login activity", "File not found: " + e.toString());
+            String error = String.format("File not found: %s", filename);
+            errorDialog(error);
         } catch (IOException e) {
-            Log.e("login activity", "Can not read file: " + e .toString());
+            String error = String.format("Could not read file: %s", filename);
+            errorDialog(error);
         }
 
         return ret;
+    }
+
+    private void errorDialog(String error_message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle(R.string.error_title);
+        builder.setMessage(error_message);
+
+        builder.setPositiveButton("OK", null);
+        builder.create().show();
+
+        Log.e("Error activity", error_message);
     }
 
     @Override

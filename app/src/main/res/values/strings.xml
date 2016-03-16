@@ -4,4 +4,6 @@
 
     <string name="ingredient_name_hint">Name of ingredient.</string>
     <string name="ingredient_name_label">Name:</string>
+
+    <string name="error_title">Error:</string>
 </resources>
