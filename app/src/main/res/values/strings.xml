@@ -11,5 +11,7 @@
     <string name="ingredient_save_button">Save</string>
     <string name="ingredient_name_hint">Name of ingredient.</string>
     <string name="ingredient_name_label">Name:</string>
+    <string name="ingredient_calories_hint">Calories/100g.</string>
+    <string name="ingredient_calories_label">Calories:</string>
 
 </resources>
