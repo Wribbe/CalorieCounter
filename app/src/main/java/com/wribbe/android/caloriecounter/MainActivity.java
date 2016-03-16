@@ -45,14 +45,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addIngredient(View view) {
-        System.out.println("addIngredient start.");
         Intent intent = new Intent(this, AddIngredientActivity.class);
         startActivityForResult(intent, ADD_INGREDIENT);
-        System.out.println("addIngredient stop.");
 
         String filename = "test.txt";
         //String data = "This is some test data..";
-        String data = "This is some test data..\nWhit a second line?\n";
+        //String data = "This is some test data..\nWhit a second line?\n";
+        String data = "This is data from second run.";
 
         writeFile(filename, data);
         String resultFromFile = readFile(filename);
