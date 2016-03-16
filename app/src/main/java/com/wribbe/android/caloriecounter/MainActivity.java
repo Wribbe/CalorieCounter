@@ -58,8 +58,11 @@ public class MainActivity extends AppCompatActivity {
         String resultFromFile = readFile(filename);
         String result = String.format(format, filename, resultFromFile);
 
-        Toast toast = Toast.makeText(this, result, Toast.LENGTH_SHORT);
-        toast.show();
+        toast(result);
+    }
+
+    public void toast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
     public void writeFile(String filename, String data) {
