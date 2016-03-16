@@ -18,13 +18,12 @@ public class AddIngredientActivity extends AppCompatActivity {
     @Override
     protected void onPause(){
         super.onPause();
-        String ingredientName = ((EditText) findViewById(R.id.ingredient_name)).getText().toString();
+        String ingredientName = getTextFromField(R.id.ingredient_name);
         if (ingredientName.equals("")) {
             System.out.println("No ingredient name.");
         } else {
             System.out.println(ingredientName);
         }
-        finish();
     }
 
     protected void returnOutput() {
@@ -34,5 +33,9 @@ public class AddIngredientActivity extends AppCompatActivity {
         setResult(Activity.RESULT_OK, output);
         System.out.println("End of return Output.");
 //        finish();
+    }
+
+    private String getTextFromField(int id) {
+        return ((EditText) findViewById(id)).getText().toString();
     }
 }
