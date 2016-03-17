@@ -14,4 +14,7 @@
     <string name="ingredient_calories_hint">Calories/100g.</string>
     <string name="ingredient_calories_label">Calories:</string>
 
+    <string name="ingredient_flag_name">name</string>
+    <string name="ingredient_flag_calories">calories</string>
+
 </resources>

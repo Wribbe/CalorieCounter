@@ -116,12 +116,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        String message_string = data.getStringExtra("message");
-        String format_string = "request code: %d, resultCode: %d, data: %s";
+        if (resultCode != RESULT_CANCELED) {
+            String name = data.getStringExtra(getString(R.string.ingredient_flag_name));
+            String calories = data.getStringExtra(getString(R.string.ingredient_flag_calories));
 
-        String toast = String.format(format_string, requestCode, resultCode, message_string);
+            String format_string = "request code: %d, resultCode: %d, name: %s, calories: %s";
 
-        Utils.toast(this, toast);
+            String toast = String.format(format_string, requestCode, resultCode, name, calories);
+
+            Utils.toast(this, toast);
+        } else {
+            Utils.toast(this, "Cancelled by user.");
+        }
     }
 
     @Override

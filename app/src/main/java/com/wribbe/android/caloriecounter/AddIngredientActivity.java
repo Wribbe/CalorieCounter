@@ -24,14 +24,17 @@ public class AddIngredientActivity extends AppCompatActivity {
         button_cancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Utils.toast(view_context, "Pressed cancel.");
+                return_cancel();
             }
         });
 
         button_save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Utils.toast(view_context, "Pressed save.");
+                parseInput();
             }
         });
+
     }
 
     @Override
@@ -46,13 +49,26 @@ public class AddIngredientActivity extends AppCompatActivity {
         }
     }
 
-    protected void returnOutput() {
-        System.out.println("Start of return Output.");
+    protected void parseInput() {
+        String name =  getTextFromField(R.id.ingredient_name);
+        String calories =  getTextFromField(R.id.ingredient_calories);
+
+        returnOutput(name, calories);
+    }
+
+    protected void return_cancel() {
+        Intent cancel_intent = new Intent();
+        setResult(Activity.RESULT_CANCELED, cancel_intent);
+        finish();
+    }
+
+    protected void returnOutput(String name, String calories) {
         Intent output = new Intent();
-        output.putExtra("message", "Hello caller.");
+
+        output.putExtra(getString(R.string.ingredient_flag_name), name);
+        output.putExtra(getString(R.string.ingredient_flag_calories), calories);
         setResult(Activity.RESULT_OK, output);
-        System.out.println("End of return Output.");
-//        finish();
+        finish();
     }
 
     private String getTextFromField(int id) {
