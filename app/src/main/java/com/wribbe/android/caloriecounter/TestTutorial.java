@@ -5,6 +5,6 @@ package com.wribbe.android.caloriecounter;
  */
 public class TestTutorial {
     public static boolean isValidEmail(String email) {
-        return false;
+        return true;
     }
 }
