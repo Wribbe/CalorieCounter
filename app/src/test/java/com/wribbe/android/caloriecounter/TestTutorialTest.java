@@ -38,6 +38,6 @@ public class TestTutorialTest {
 
         String result = myObjectUnderTest.getIngredientFlagName();
 
-        assertThat(result, is(FAKE_STRING+'a'));
+        assertThat(result, is(FAKE_STRING));
     }
 }
